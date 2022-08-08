@@ -1,7 +1,6 @@
 import FacultiesPage from "./student/pages/FacultiesPage";
 import GroupsPage from "./student/pages/GroupsPage";
 import StudentsPage from "./student/pages/StudentsPage";
-import ProfilePage from "./student/pages/ProfilePage";
 
 export const routers = {
     path: "/administration",
@@ -26,8 +25,5 @@ export const routers = {
                 },
             ]
         },
-    ],
-    path: "/profile",
-    name: "Profile",
-    Component: ProfilePage
+    ]
 }

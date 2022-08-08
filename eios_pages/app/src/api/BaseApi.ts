@@ -52,6 +52,8 @@ export class BaseApi implements BaseApiInterface, BaseApiOrmInterface {
     async request() {
         const response = await fetch(this.getUrl());
 
+        console.log(this.getUrl())
+
         if (response.ok) {
             return await response;
         } else {

@@ -2,17 +2,19 @@ import React, {Fragment, useReducer} from 'react';
 import {ThroughProvider} from 'react-through';
 
 import {Route, Routes} from 'react-router-dom'
-import FacultiesPage from './src/administration/student/pages/FacultiesPage';
-import GroupsPage from "./src/administration/student/pages/GroupsPage";
-import StudentsPage from "./src/administration/student/pages/StudentsPage";
-import MainComponent from "./src/MainComponent";
-import {routers as administration_routers} from "./src/administration/routers";
+// import FacultiesPage from './src/administration/student/pages/FacultiesPage';
+// import GroupsPage from "./src/administration/student/pages/GroupsPage";
+// import StudentsPage from "./src/administration/student/pages/StudentsPage";
+import MainComponent from "./app/src/MainComponent";
+import {routers as administration_routers} from "./app/src/administration/routers";
+import {routers as student_routers} from './app/src/student/routers';
 
 const routes = [
     {
         path: "/",
         Component: MainComponent,
-        children: [administration_routers],
+        children: [administration_routers,
+                   student_routers],
     }
 ];
 

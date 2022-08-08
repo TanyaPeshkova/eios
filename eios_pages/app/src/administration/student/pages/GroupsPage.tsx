@@ -5,8 +5,8 @@ import {Link} from "react-router-dom";
 import {withParams} from "../../../helpers";
 import {GroupInterface} from "../../../models/Group";
 import {Faculty, FacultyInterface} from "../../../models/Faculty";
-import {FacultyEios} from "../../../api/eios/FacultyEios";
-import {GroupEios} from "../../../api/eios/GroupEios";
+import {FacultyEios} from "../../../../api/eios/FacultyEios";
+import {GroupEios} from "../../../../api/eios/GroupEios";
 
 interface TableGroupsInteface {
     groups: [[GroupInterface]],

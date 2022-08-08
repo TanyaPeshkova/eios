@@ -1,12 +1,10 @@
-import React from "react";
-import {Link} from "react-router-dom";
- import {Profile, ProfileInterface} from "../../../models/Profile";
- import { ProfileEios } from "../../../api/eios/ProfileEios";
-import data from "../../../api/profile.json";
+import * as React from "react";
+ import {StudentEios} from "../../models/StudentEios";
+ import { ProfileEios } from "../../api/eios/ProfileEios";
 
 class ProfilePage extends React.Component{
     state = {
-        profile: [new Profile()]
+        profile: [new StudentEios()]
     }
     
 
@@ -19,7 +17,7 @@ class ProfilePage extends React.Component{
     
 
     async request() {
-        const profile = await new ProfileEios().all();
+        const profile = await new ProfileEios().first();
 
         this.setState({profile: profile}) 
     }
@@ -30,11 +28,13 @@ class ProfilePage extends React.Component{
             </div>
         })
         const pr = new ProfileEios().all();
-        console.log('data = ',data);
+        if (this.state.profile) { 
+            console.log(this.state.profile)
+         }
+
         console.log('profile',this.state.profile)
         console.log('pr',pr);
         return <div>
-            <h1>Hello</h1>
             <span>{rows}</span>
         </div>
        }
